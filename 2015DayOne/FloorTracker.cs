@@ -1,17 +1,26 @@
 namespace _2015DayOne;
 
-public class FloorTracker
+public static class FloorTracker
 {
     public static int TrackFloor(string path)
     {
-        var splitPath = path.Split().ToArray();
-        var finallFloor = 0;
+        var splitPath = path.ToCharArray();
+        int finalFloor = 0;
         foreach (var floor in splitPath)
         {
-            if (floor == "(") finallFloor += 1;
-            if (floor == ")") finallFloor -= 1;
-        }
+            Console.WriteLine(floor);
+            Console.WriteLine(finalFloor);
 
-        return finallFloor;
+            if (floor == '(')
+            {
+                finalFloor += 1;
+            }
+            if (floor == ')')
+            {
+                finalFloor -= 1;
+            }
+        }
+        
+        return finalFloor;
     }
 }
