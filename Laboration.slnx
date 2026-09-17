@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="2015DayOne.Tests/2015DayOne.Tests.csproj" />
+  <Project Path="2015DayOne/2015DayOne.csproj" />
   <Project Path="Common.Tests/Common.Tests.csproj" />
   <Project Path="Common/Common.csproj" />
   <Project Path="Y2021D01.Tests/Y2021D01.Tests.csproj" />
