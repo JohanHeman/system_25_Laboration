@@ -1,15 +1,15 @@
 namespace _2015DayOne;
 
-public static class FloorTracker
+public class FloorTracker
 {
-    public static int TrackFloor(string path)
+    public int TrackFloor(string path)
     {
         var splitPath = path.ToCharArray();
         int finalFloor = 0;
         foreach (var floor in splitPath)
         {
-            Console.WriteLine(floor);
-            Console.WriteLine(finalFloor);
+
+            if (floor != '(' || floor != ')') throw new Exception("The symbol must be '(' or ')'");
 
             if (floor == '(')
             {
