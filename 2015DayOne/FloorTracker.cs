@@ -11,7 +11,7 @@ public class FloorTracker
         foreach (var floor in splitPath)
         {
 
-            if (floor != '(' || floor != ')') throw new Exception("The symbol must be '(' or ')'");
+            if (floor != '(' && floor != ')') throw new Exception("The symbol must be '(' or ')'");
 
             if (floor == '(')
             {
