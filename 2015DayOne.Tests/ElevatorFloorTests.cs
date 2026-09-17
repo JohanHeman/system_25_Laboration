@@ -24,7 +24,6 @@ public class ElevatorFloorTests
     }
     
     [Theory]
-    [InlineData("")]
     [InlineData("j hu HH")]
     [InlineData("((g((UJ ))")]
     
@@ -33,9 +32,23 @@ public class ElevatorFloorTests
         // Assert
         var actual = Assert.Throws<Exception>(() => _sut.TrackFloor(path));
         
-        Assert.Equal(actual.Message, "The symbol must be '(' or ')' ");
+        Assert.Equal(actual.Message, "The symbol must be '(' or ')'");
         // Act
         
+    }
+
+    [Fact]
+    public void FloorTracker_ThrowsWhenStringIsEmpty()
+    {
+        // Arrange
+
+        string emptyString = "";
+        
+
+        // Act
+        Assert.Throws<Exception>(() => _sut.TrackFloor(emptyString));
+
+        // Assert
     }
     
     
