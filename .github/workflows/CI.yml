@@ -1,4 +1,6 @@
 name: CI
+
+
 on:
   push:
     branches:
@@ -9,8 +11,12 @@ on:
   workflow_dispatch:
 
 
+
+
 jobs:
   build-and-test:
+    env: 
+      BUILD_CONFIGURATION: Release
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -22,6 +28,16 @@ jobs:
       - name: restore
         run: dotnet restore
       - name: build
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build --no-restore --configuration $BUILD_CONFIGURATION
       - name: test
-        run: dotnet test --no-build --configuration Release
+        run: dotnet test --no-build --configuration ${{ env.BUILD_CONFIGURATION }}
+      - name: Vem och vad staartade det här?
+        env:
+          author: ${{ github.actor }}
+          event: ${{ github.event_name }}
+          branch: ${{ github.ref_name }}
+        run: |
+          echo "Startad av $author - händelse: $event - gren: $branch"
+          
+          
+          
