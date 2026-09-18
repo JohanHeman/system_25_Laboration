@@ -2,6 +2,7 @@
 
 using _2015DayOne;
 using AdventOfCode.Common;
+using ElvesLookElvesSay;
 using Y2021D01;
 using Console = System.Console;
 
@@ -16,11 +17,8 @@ using Console = System.Console;
 // Console.WriteLine($"The file contained {depths.Length} entries, and they increased {increases} times.");
 //
 
-var path = Path.Combine(AppContext.BaseDirectory, "ElevatorInput.txt");
 
-var input = File.ReadAllText(path).Trim();
+var look = new LookSay();
 
-var floorTracker = new FloorTracker();
 
-var result = floorTracker.TrackFloor(input);
-Console.WriteLine(result);
+Console.WriteLine(look.CountNumberOcurrance(3113));
