@@ -51,7 +51,7 @@ jobs:
         with:
           dotnet-version: "10.0.x"
       - name: format
-        run: dotnet format --report ../../report.txt
+        run: dotnet format --report ../../report.json
           
           
           
