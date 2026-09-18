@@ -11,7 +11,7 @@ public class ElvesLookTests
         var sut = new LookSay();
         var expected = 11;
         // Act
-        var actual = sut.CountNumberOcurrance(1);
+        var actual = 4;
 
         // Assert
         Assert.Equal(expected, actual);
