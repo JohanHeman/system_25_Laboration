@@ -40,7 +40,18 @@ jobs:
 
           echo "Startad av ${{ env.author }} - händelse: ${{env.event}} - gren: ${{env.branch}}"
           echo "Startad av ${{ env.author }} - händelse: ${{env.event}} - gren: ${{env.branch}}" >> $GITHUB_STEP_SUMMARY
-
+  formatting:
+    name: codeformating
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+      - name: install-dotnet
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.x"
+      - name: format
+        run: dotnet format --report ../../report.json
           
           
           
