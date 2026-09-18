@@ -37,8 +37,10 @@ jobs:
           event: ${{ github.event_name }}
           branch: ${{ github.ref_name }}
         run: |
-          echo "Startad av $author - händelse: $event - gren: $branch"
-          echo "Startad av $author - händelse: $event - gren: $branch" >> $GITHUB_STEP_SUMMARY
+
+          echo "Startad av ${{ env.author }} - händelse: ${{env.event}} - gren: ${{env.branch}}"
+          echo "Startad av ${{ env.author }} - händelse: ${{env.event}} - gren: ${{env.branch}}" >> $GITHUB_STEP_SUMMARY
+
           
           
           
