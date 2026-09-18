@@ -21,3 +21,4 @@ using Console = System.Console;
 var look = new LookSay();
 
 Console.WriteLine(look.CountNumberOcurrance(3113));
+Console.WriteLine("hello");
