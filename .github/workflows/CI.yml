@@ -1,4 +1,6 @@
 name: CI
+
+
 on:
   push:
     branches:
@@ -7,6 +9,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+
+
 
 
 jobs:
@@ -26,4 +30,14 @@ jobs:
       - name: build
         run: dotnet build --no-restore --configuration $BUILD_CONFIGURATION
       - name: test
-        run: dotnet test --no-build --configuration $BUILD_CONFIGURATION
+        run: dotnet test --no-build --configuration ${{ env.BUILD_CONFIGURATION }}
+      - name: Vem och vad staartade det här?
+        env:
+          author: ${{ github.actor }}
+          event: ${{ github.event_name }}
+          branch: ${{ github.ref_name }}
+        run: |
+          echo "Startad av $author - händelse: $event - gren: $branch"
+          
+          
+          
